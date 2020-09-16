@@ -1,4 +1,5 @@
 import json
+import os
 from datetime import datetime
 
 from icalendar import Calendar, Event
@@ -161,8 +162,20 @@ if __name__ == "__main__":
         token = settings['token']
         url = settings['url']
         client = NotionClient(settings['token'], monitor=False)
-    calendar_id = m.list_available_calendars()
     
+    calendar_id = ""
+    if os.path.isfile("prioritary-calendar.txt"):
+        f = open("prioritary-calendar.txt", "r")
+        calendar_id = f.read()
+        f.close()
+        print("Calendar was choosen already, gonna sync this {0} calendar!".format(calendar_id))
+    else:
+        calendar_id = m.list_available_calendars()
+        f = open("prioritary-calendar.txt", "a")
+        f.write(calendar_id)
+        f.close()
+        print("Prioritary sync calendar was set to this {0} calendar!".format(calendar_id))
+
     remove_done_tasks(client,url,"{NAME}",calendar_id)
     cal = get_ical(client,url,"{NAME}",calendar_id)
 
