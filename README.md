@@ -1,7 +1,8 @@
 # Notion-GoogleCalendar-Sync
 This project allows you to sync a notion database with a calendar view with the google calendar.
+
 When called in a cron, for example,it first sees the tasks with a property called "Status" and sees if it equals done. Everytime I do finish a task I change its status to done.
-You can change the code to change the property name of course.
+You can change the code to change the property name of course. It searches them on the calendar and deletes them as they are, you guess it, done. Then, it reads the database and checks one per one if it is inside the calendar yet,and if it is not adds it!
 
 Need to have a ```client_id.json``` get from the Google Calendar API, more info here: 
 https://developers.google.com/calendar/quickstart/python
@@ -17,6 +18,10 @@ Also a ```settings.json``` file with this structure:
 To get the tokenV2 I do explain it on my other notion repo here https://github.com/elblogbruno/NotionAI-MyMind.
 
 This project was inspired why https://github.com/evertheylen/notion-export-ics that the idea to get it done is simpler, but this one I find it nicer and faster. 
+
+## TODO
+Google Calendar to notion sync.
+
 
 ## FAQS
 
