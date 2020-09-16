@@ -1,5 +1,7 @@
 # Notion-GoogleCalendar-Sync
 This project allows you to sync a notion database with a calendar view with the google calendar.
+When called in a cron, for example,it first sees the tasks with a property called "Status" and sees if it equals done. Everytime I do finish a task I change its status to done.
+You can change the code to change the property name of course.
 
 Need to have a ```client_id.json``` get from the Google Calendar API, more info here: 
 https://developers.google.com/calendar/quickstart/python
@@ -31,6 +33,5 @@ KeyError: 'query'
 
 If you get this error see this:
 
-```
-jamalex/notion-py#190 I made a pull request fixing the issue. A quick one is to manually modify the notion/collection.py go to the line 249 and change "query" for "query2".
-```
+https://github.com/evertheylen/notion-export-ics/issues/5
+
