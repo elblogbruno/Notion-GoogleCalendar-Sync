@@ -19,6 +19,18 @@ To get the tokenV2 I do explain it on my other notion repo here https://github.c
 
 This project was inspired why https://github.com/evertheylen/notion-export-ics that the idea to get it done is simpler, but this one I find it nicer and faster. 
 
+## HOW TO USE IT?
+Install the requirements:
+
+```
+pip install -r requirements.txt
+```
+And then call the file:
+
+```
+python add_notion_task_to_cal.py
+```
+
 ## TODO
 Google Calendar to notion sync.
 
