@@ -25,15 +25,24 @@ Install the requirements:
 ```
 pip install -r requirements.txt
 ```
-And then call the file:
+And then call the file to do an initial configuration and sync:
 
 ```
 python add_notion_task_to_cal.py
 ```
+Then add it to crontab:
+
+```
+crontab -e
+```
+Write down this. The line of * means it will run the sync script every 5 minutes, you can change it for whatever suits you.
+
+```
+*/5 * * * *  /usr/bin/python ~/Notion-GoogleCalendar-Sync/add_notion_task_to_cal.py  #this can be set to wheter the file is and python version you have.
+```
 
 ## TODO
 Google Calendar to notion sync.
-
 
 ## FAQS
 
