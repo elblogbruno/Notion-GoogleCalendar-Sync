@@ -168,7 +168,7 @@ class google_calendar_api:
                         "eventId" : event_id,
                         "sendUpdates"  : "all",
                     }
-                    self.service.events().delete(**delete_body)
+                    self.service.events().delete(**delete_body).execute()
                     print('Event has been found.')
                     break
             if found != True:
