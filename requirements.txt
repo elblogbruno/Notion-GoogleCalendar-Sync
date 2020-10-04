@@ -1,0 +1,7 @@
+gtasks == 0.1.3
+
+notion == 0.0.25
+
+tzlocal == 2.1
+
+utils == 1.0.1
